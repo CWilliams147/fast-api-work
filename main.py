@@ -21,3 +21,7 @@ def read_items(skip: int = 0, limit: int = 10, q: str = None):
 @app.get("/users/{user_id}")
 def read_item(user_id: int):
     return {"user_id": user_id}
+
+@app.get("/users/{user_id}/items/")
+def read_user_item(user_id, skip, limit):
+    return {"user_id": user_id, "skip": skip, "limit": limit}
